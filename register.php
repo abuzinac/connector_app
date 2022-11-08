@@ -46,12 +46,16 @@ if (isset($_POST['register_button'])) {
     $password2 = strip_tags($_POST['reg_password2']); //Remove html tags
 
     //current date
-    $date = date("d-m-Y"); //todo date format date(Y-m-d)
+    $date = date("d-m-Y"); //todo maybe date format date(Y-m-d)
 
     if ($em == $em2) {
         //Check if email is in valid format
         if (filter_var($em, FILTER_VALIDATE_EMAIL)) {
             $em = filter_var($em, FILTER_VALIDATE_EMAIL);
+
+            //Check if email already exists
+
+
         } else {
             echo "Invalid format";
         }
